@@ -531,11 +531,19 @@ class SystemModelHeating(UESGraph):
                 self.nodes[network_node]["degree"] = self.degree(network_node)
 
                 for i, neighbor in enumerate(self.neighbors(network_node)):
+<<<<<<< HEAD
                     curr_port = "junction{}.port".format(
                         self.nodes[network_node]["name"]
                     )
                     curr_port_R = "junction{}R.port".format(
                         self.nodes[network_node]["name"]
+=======
+                    curr_port = "junction{}.ports[{}]".format(
+                        self.nodes[network_node]["name"], i
+                    )
+                    curr_port_R = "junction{}R.ports[{}]".format(
+                        self.nodes[network_node]["name"], i
+>>>>>>> a5177ecbdb603c04e34c48fe8955cf99460db8d4
                     )
                     for con in self.edges[neighbor, network_node].keys():
                         con_element = self.edges[neighbor, network_node][con]
@@ -559,15 +567,24 @@ class SystemModelHeating(UESGraph):
                     name_pipe = con1.split(".")[0][4:]
                     if "port_b" in con1:
                         occurrences_port[name_pipe] += 1
+<<<<<<< HEAD
                         con1_new = "pipe{}.port_b".format(
                             name_pipe
+=======
+                        con1_new = "pipe{}.ports_b[{}]".format(
+                            name_pipe, occurrences_port[name_pipe]
+>>>>>>> a5177ecbdb603c04e34c48fe8955cf99460db8d4
                         )
                         self.edges[edge[0], edge[1]]["con1"] = con1_new
                 if "pipe" in con2:
                     name_pipe = con2.split(".")[0][4:]
                     if "port_b" in con2:
                         occurrences_port[name_pipe] += 1
+<<<<<<< HEAD
                         con2_new = "pipe{}.port_b".format(
+=======
+                        con2_new = "pipe{}.ports_b[{}]".format(
+>>>>>>> a5177ecbdb603c04e34c48fe8955cf99460db8d4
                             name_pipe, occurrences_port[name_pipe]
                         )
                         self.edges[edge[0], edge[1]]["con2"] = con2_new
@@ -589,16 +606,26 @@ class SystemModelHeating(UESGraph):
                     name_pipe = con1R.split(".")[0].replace("R", "")[4:]
                     if "port_b" in con1R:
                         occurrences_port[name_pipe] += 1
+<<<<<<< HEAD
                         con1R_new = "pipe{}R.port_b".format(
                             name_pipe
+=======
+                        con1R_new = "pipe{}R.ports_b[{}]".format(
+                            name_pipe, occurrences_port[name_pipe]
+>>>>>>> a5177ecbdb603c04e34c48fe8955cf99460db8d4
                         )
                         self.edges[edge[0], edge[1]]["con1R"] = con1R_new
                 if "pipe" in con2R:
                     name_pipe = con2R.split(".")[0].replace("R", "")[4:]
                     if "port_b" in con2R:
                         occurrences_port[name_pipe] += 1
+<<<<<<< HEAD
                         con2R_new = "pipe{}R.port_b".format(
                             name_pipe
+=======
+                        con2R_new = "pipe{}R.ports_b[{}]".format(
+                            name_pipe, occurrences_port[name_pipe]
+>>>>>>> a5177ecbdb603c04e34c48fe8955cf99460db8d4
                         )
                         self.edges[edge[0], edge[1]]["con2R"] = con2R_new
 
