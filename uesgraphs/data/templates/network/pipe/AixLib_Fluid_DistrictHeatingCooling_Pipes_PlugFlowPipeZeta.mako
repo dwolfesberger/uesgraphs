@@ -80,12 +80,7 @@
     %endif
     length = ${str(round(length, 4))},
     dIns = ${str(round(dIns, 4))},
-<<<<<<< HEAD
     kIns = ${str(round(kIns, 4))}
-=======
-    kIns = ${str(round(kIns, 4))},
-    nPorts = ${str(round(nPorts, 4))}
->>>>>>> a5177ecbdb603c04e34c48fe8955cf99460db8d4
     )
     annotation(Placement(transformation(
       extent={{-2,-2},{2,2}},
@@ -96,11 +91,7 @@
       %endif
       origin={${str(round(x, 4))},${str(round(y, 4))}})));
 <%def name="get_main_parameters()">
-<<<<<<< HEAD
    length dIns kIns
-=======
-   length dIns kIns nPorts
->>>>>>> a5177ecbdb603c04e34c48fe8955cf99460db8d4
 </%def><%def name="get_aux_parameters()">
    from_dp dh v_nominal ReC roughness m_flow_nominal m_flow_small cPip rhoPip thickness T_start_in T_start_out initDelay m_flow_start R fac sum_zetas homotopyInitialization linearized CPip VEqu sta_default cp_default C rho_default allowFlowReversal
 </%def><%def name="get_connector_names()">
